@@ -1,4 +1,4 @@
-# Tweetie
+# Tweeter Assignment
 
 ## How to Run
 
