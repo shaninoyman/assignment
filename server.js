@@ -12,7 +12,6 @@ db.on('open', () => console.log('Connected to Database'))
 app.use(express.json())
 
 let subscribersRouter = require('./routes/subscribers')
-console.log(typeof subscribersRouter.validateSubscriber)
 app.use('/subscribers', subscribersRouter.router)
 
 let tweetsRouter = require('./routes/tweets')
