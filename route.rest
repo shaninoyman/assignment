@@ -1,0 +1,103 @@
+//get subscriber's details by username and password
+GET http://localhost:3000/subscribers/
+Content-Type: application/json
+
+{
+    "username": "user1", 
+    "password": "pass1", 
+    "action": "getSubscriber"
+}
+###
+
+//get most popular subscriber
+GET http://localhost:3000/subscribers/
+Content-Type: application/json
+
+{
+    "action": "getMostPopularSubscriber"
+}
+
+###
+
+// create subscriber (username must be unique and password length must be 4 or more chars)
+POST http://localhost:3000/subscribers
+Content-Type: application/json
+
+{
+    "username": "user", 
+    "password": "pass"
+}
+
+###
+
+// change password
+PATCH http://localhost:3000/subscribers
+Content-Type: application/json
+
+{
+    "username": "user1", 
+    "password": "pass1", 
+    "newPassword": "pass11", 
+    "action": "changePassword"
+}
+
+
+###
+// follow 
+PATCH http://localhost:3000/subscribers
+Content-Type: application/json
+
+{
+    "username": "user1", 
+    "password": "pass1", 
+    "action": "follow", 
+    "usernameToFollow": "user2"
+}
+
+
+
+###
+// unfollow 
+PATCH http://localhost:3000/subscribers
+Content-Type: application/json
+
+{
+    "username": "user1", 
+    "password": "pass1", 
+    "action": "unfollow", 
+    "usernameToUnfollow": "user2"
+}
+
+###
+
+// post a tweet
+POST http://localhost:3000/tweets
+Content-Type: application/json
+
+{
+    "username": "user1", 
+    "password": "pass1", 
+    "content": "tweet"
+}
+
+
+###
+
+//get user timeline 
+GET http://localhost:3000/tweets
+Content-Type: application/json
+
+{
+    "username": "user1", 
+    "timelineType": "user"
+}
+###
+
+//get subscriber's home timeline 
+GET http://localhost:3000/tweets
+Content-Type: application/json
+
+{
+    "username": "user1", 
+    "timelineType": "home"
+}
